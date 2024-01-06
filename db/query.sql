@@ -1,8 +1,4 @@
 
--- SELECT *
--- FROM role
--- LEFT JOIN department ON role.department_id = department.id;
-
 -- https://learnsql.com/blog/how-to-join-3-tables-or-more-in-sql/
 
 SELECT 
@@ -15,4 +11,4 @@ FROM department
 JOIN employee
 ON department.id = employee.role_id
 JOIN role
-ON role.id = department.id;
+ON role.id = department.id

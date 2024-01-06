@@ -1,26 +1,22 @@
 
 function showDepartments() {
-    const mysql = require('mysql2');
+    const db = require('../db/dbLink.js');
+    const cli = require('./cli.js');
 
-    // Connect to database
-    const db = mysql.createConnection(
-        {
-            host: 'localhost',
-            // MySQL username,
-            user: 'root',
-            // MySQL password
-            password: 'Fuckyourdata$#@!1234',
-            database: 'company_db'
-        },
-    );
+    db.connect(err => {
+        if (err) throw err;
 
-    let sqlCommand = 'SELECT * FROM department'
-
-    db.query(sqlCommand, (err, res) => {
-        if (err) {
-            return err;
-        }
-        console.log(res)
+        let sqlCommand = 'SELECT * FROM department'
+        db.query(sqlCommand, (err, res) => {
+            if (err) {
+                console.log(err)
+                throw err;
+            }
+            console.log("\n");
+            console.table(res);
+            console.log("\n");
+            cli.run();
+        });
     });
 }
 module.exports = { showDepartments };
