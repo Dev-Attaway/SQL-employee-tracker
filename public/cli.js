@@ -24,7 +24,7 @@ function run() {
     .prompt([
       {
         type: 'list',
-        name: 'commmand',
+        name: 'command',
         message: 'What would you like to do?',
 
         // 'View All Employees', 'Add Employee', 'Update Employee Role',
@@ -35,28 +35,28 @@ function run() {
 
     // based on the answer from the user, the code will execute the function calls below
     .then((answers) => {
-      if (answers.commmand === 'View All Departments') {
+      if (answers.command === 'View All Departments') {
         console.log("Viewing All Departments: \n\n\n\n");
         showDepartments();
       }
-      else if (answers.commmand === 'View All Roles') {
+      else if (answers.command === 'View All Roles') {
         console.log("Viewing Roles: ");
         showRoles();
       }
-      else if (answers.commmand === 'View All Employees') {
+      else if (answers.command === 'View All Employees') {
         console.log("Viewing Employees: ");
         showEmployees();
       }
-      else if (answers.commmand === 'Add Department')
+      else if (answers.command === 'Add Department')
         addDepartment();
 
-      else if (answers.commmand === 'Add Role')
+      else if (answers.command === 'Add Role')
         addRole();
 
-      else if (answers.commmand === 'Add Employee')
+      else if (answers.command === 'Add Employee')
         addEmployee();
 
-      else if (answers.commmand === 'Update Employee Role')
+      else if (answers.command === 'Update Employee Role')
         updateEmployee();
       else
         terminate();
