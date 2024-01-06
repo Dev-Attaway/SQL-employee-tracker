@@ -1,7 +1,7 @@
 // calling the inquirer package
 const inquirer = require('inquirer');
 
-// chalk and figlet provide style to the console text when displayed tot he user
+// chalk and figlet provide style to the console text when displayed to the user
 // Read more here:
 // https://www.npmjs.com/package/chalk and https://www.npmjs.com/package/figlet
 const chalk = require("chalk");
@@ -33,7 +33,7 @@ function run() {
       }
     ])
 
-    // based on the answer from the user, the code will execute the function calls below
+    //Based on the answer from the user, the code will execute the function calls below
     .then((answers) => {
       if (answers.command === 'View All Departments') {
         console.log("Viewing All Departments: \n\n\n\n");
