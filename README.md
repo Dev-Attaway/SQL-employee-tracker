@@ -10,8 +10,7 @@
 7. [Questions](#questions)
 
 ## Description
-Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
-## Installation
+Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). this application servers a model for building a potential database using [MySQL](https://www.mysql.com/) and [node.js](https://nodejs.org/en).
 
 ## Usage
 This application is accessed through a CLI or an integrated terminal and must have [node.js](https://nodejs.org/en) to execute  the initialization from the CLI.
