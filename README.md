@@ -7,7 +7,8 @@
 4. [Contributing](#contributing)
 5. [Tests](#tests)
 6. [License](#license)
-7. [Questions](#questions)
+7. [Technology](#technology)
+8. [Questions](#questions)
 
 ## Description
 Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). this application server as a model for building a potential database using [MySQL](https://www.mysql.com/) and [node.js](https://nodejs.org/en).
@@ -31,6 +32,23 @@ Further
 ## License
 Please see https://mit-license.org/ to get detailed information about this license.
 Other SELECT queries can be made within the /db folder or overwrite the provided db/test.sql file.
+## Technology
+The Technology used for this application:
+
+[MySQL Shell ](https://www.mysql.com/)
+
+[node.js](https://nodejs.org/en)
+
+[npm](https://www.npmjs.com/)
+
+[figlet](https://www.npmjs.com/](https://www.npmjs.com/package/figlet))
+
+[chalk](https://www.npmjs.com/](https://www.npmjs.com/package/chalk))
+
+[inquirer](https://www.npmjs.com/package/inquirer)
+
+[mysql2](https://www.npmjs.com/package/mysql2)
+
 ## Questions
 You can find me [HERE](https://github.com/Dev-Attaway) on GitHub
 You can email me at attaway.code@gmail.com if you have any additional questions.
