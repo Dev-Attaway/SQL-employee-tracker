@@ -36,7 +36,7 @@ function run() {
     //Based on the answer from the user, the code will execute the function calls below
     .then((answers) => {
       if (answers.command === 'View All Departments') {
-        console.log("Viewing All Departments: \n\n\n\n");
+        console.log("Viewing All Departments: ");
         showDepartments();
       }
       else if (answers.command === 'View All Roles') {
