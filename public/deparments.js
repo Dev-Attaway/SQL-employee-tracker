@@ -8,7 +8,7 @@ function showDepartments() {
 
     db.connect(err => {
         
-        // display an error is error otherwise do work 
+        // display an error is an error otherwise do work 
         if (err) throw err;
 
         // loading a SQL command into sqlCommand        
@@ -18,7 +18,7 @@ function showDepartments() {
         FROM 
         department`
 
-        // sending the query to the SQL db and returns and error(err) and response(res) => res is the list on the data collected from the query
+        // sending the query to the SQL DB and returns an error(err) and response(res) => res is the list of the data collected from the query
         db.query(sqlCommand, (err, res) => {
             if (err) {
                 console.log(err)
@@ -29,7 +29,7 @@ function showDepartments() {
             console.table(res);
             console.log("\n");
             
-            // since Terminate Program as yet to be choosen, the program is init again
+            //Since 'Terminate Program' has yet to be chosen, the program is initiated again
             cli.run();
         });
     });
