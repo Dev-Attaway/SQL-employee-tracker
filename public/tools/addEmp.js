@@ -42,7 +42,7 @@ function addEmployee() {
                         // Adding Employee Role
                         type: 'list',
                         name: 'role',
-                        message: 'What is the employees role?',
+                        message: 'What is the employee's role?',
                         choices: () => {
                             var array = [];
                             for (var i = 0; i < roles.length; i++) {
