@@ -10,7 +10,7 @@
 7. [Questions](#questions)
 
 ## Description
-Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). this application servers a model for building a potential database using [MySQL](https://www.mysql.com/) and [node.js](https://nodejs.org/en).
+Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). this application server as a model for building a potential database using [MySQL](https://www.mysql.com/) and [node.js](https://nodejs.org/en).
 
 ## Usage
 This application is accessed through a CLI or an integrated terminal and must have [node.js](https://nodejs.org/en) to execute  the initialization from the CLI.
@@ -26,3 +26,4 @@ Other SELECT queries can be made within the /db folder or overwrite the provided
 ## Questions
 You can find me [HERE](https://github.com/Dev-Attaway) on GitHub
 You can email me at attaway.code@gmail.com if you have any additional questions.
+[Untitled_ Jan 6, 2024 2_30 PM.webm](https://github.com/Dev-Attaway/SQL-employee-tracker/assets/145059598/8a8d46db-ba43-450d-adff-b3e92b4af395)
