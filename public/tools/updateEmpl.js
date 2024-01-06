@@ -1,9 +1,9 @@
 function updateEmployee() {
 
     // grabbing the script from dbLink and cli
-    // dbLink.js establishes the connection to the SQL db
-    // We will require the inquirer package to ask sub-queries winthin the main query of 'Update employees'
-    // We will also require the showEmployees functions to show to the console the our employee's new role was updated
+    // dbLink.js establishes the connection to the SQL DB
+    // We will require the inquirer package to ask sub-queries within the main query of 'Update employees'
+    // We will also require the showEmployees functions to show to the console that our employee's new role was updated
     const db = require('../../db/dbLink.js');
     const inquirer = require('inquirer');
     const { showEmployees } = require('../employees.js');
@@ -11,9 +11,9 @@ function updateEmployee() {
     db.connect(err => {
         if (err) throw err;
 
-        // To grab all the equired data from the two tables, we have to approach this via a nested query
-        // Due to both tables which have variables which are equal in name id (employee) = id (role)
-        // the result of the query hold render 'meshed' data from both tables making it useless for evalutation
+        // To grab all the required data from the two tables, we have to approach this via a nested query
+        // Due to both tables which have variables that are equal in name id (employee) = id (role)
+        //The result of the query hold renders 'meshed' data from both tables making it useless for evaluation
         db.query(`SELECT * FROM employee`, (err, employees) => {
             if (err) throw err;
             db.query(`SELECT * FROM role`, (err, roles) => {
@@ -28,8 +28,8 @@ function updateEmployee() {
                             var array = [];
                             for (var i = 0; i < employees.length; i++) {
 
-                                // traverses and pushes the roles.title varaibles onto the array
-                                // which is displayed to user as a sub-query of possible employees to choose from                                
+                                // traverses and pushes the roles.title variables onto the array
+                                // which is displayed to the user as a sub-query of possible employees to choose from                                
                                 array.push(employees[i].first_name + " " + employees[i].last_name);
                             }
                             var newArray = [...new Set(array)];
@@ -53,7 +53,7 @@ function updateEmployee() {
                 ])
                     .then((answers) => {
 
-                    // Comparing the employees, roles, and storing it into the selectedName and roleID
+                    // Comparing the employees and roles, and storing it into the selectedName and roleID
                         for (var i = 0; i < employees.length; i++) {
                             let employeeName = employees[i].first_name + " " + employees[i].last_name;
                             if (employeeName == answers.selectedName) {
