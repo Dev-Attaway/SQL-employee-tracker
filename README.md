@@ -19,10 +19,11 @@ Must also have [MySQL Shell ](https://www.mysql.com/) or a SQL interface support
 ## Contributing
 No further contributions for consideration, develop from your fork
 ## Tests
-refer to the seeds.sql file found in db/seeds.sql to populate a database for any further tests
+Refer to the seeds.sql file found in db/seeds.sql to populate a database for any further tests
+Further 
 ## License
-Please see https://mit-license.org/ to get detailed information about this license
-
+Please see https://mit-license.org/ to get detailed information about this license.
+Other SELECT queries can be made within the /db folder or overwrite the provided db/test.sql file.
 ## Questions
 You can find me [HERE](https://github.com/Dev-Attaway) on GitHub
 You can email me at attaway.code@gmail.com if you have any additional questions.
