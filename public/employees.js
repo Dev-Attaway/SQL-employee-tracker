@@ -5,8 +5,14 @@ function showEmployees() {
     db.connect(err => {
         if (err) throw err;
 
+        // CONCAT(managers.first_name, " ", managers.last_name ) AS Manager
+        // grabs the employee.first_name and employee.last_name but we have a "LEFT JOIN" employee AS managers
+        // therefore employee is represented as a 'manager'
+        // ON employee.manager_id = managers.id, links the employees who have managers to their managers
+        // while the LEFT JOIN grabs employees who DO NOT have managers
+
         let sqlCommand =
-            `SELECT
+        `SELECT
         employee.id AS ID,
         employee.first_name AS Firstname,
         employee.last_name AS Lastname,

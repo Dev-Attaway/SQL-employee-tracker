@@ -1,10 +1,19 @@
 function addEmployee() {
+
+    // grabbing the script from dbLink and cli
+    // dbLink.js establishes the connection to the SQL db
+    // We will require the inquirer package to ask sub-queries winthin the main query of 'Add employees'
+    // We will also require the showEmployees functions to show to the console the our new employees was apended
     const db = require('../../db/dbLink.js');
     const inquirer = require('inquirer');
     const { showEmployees } = require('../employees.js');
 
     db.connect(err => {
         if (err) throw err;
+
+        // To grab all the equired data from the two tables, we have to approach this via a nested query
+        // Due to both tables which have variables which are equal in name id (employee) = id (role)
+        // the result of the query hold render 'meshed' data from both tables making it useless for evalutation
         db.query(`SELECT * FROM employee`, (err, employees) => {
             if (err) throw err;
             db.query(`SELECT * FROM role`, (err, roles) => {
@@ -16,16 +25,19 @@ function addEmployee() {
                         name: 'firstName',
                         message: 'What is the employees first name?',
                         validate: firstNameInput => {
+
+                            // determines if the answer provided by user is truthy                            
                             if (firstNameInput) {
                                 return true;
                             } else {
+
+                                // do not pass on, user must provide name or ^C(kills app) to continue
                                 console.log('Please Add A First Name!');
                                 return false;
                             }
                         }
                     },
                     {
-                        // Adding Employee Last Name
                         type: 'input',
                         name: 'lastName',
                         message: 'What is the employees last name?',
@@ -46,6 +58,9 @@ function addEmployee() {
                         choices: () => {
                             var array = [];
                             for (var i = 0; i < roles.length; i++) {
+
+                                // traverses and pushes the roles.title varaibles onto the array
+                                // which is displayed to user as a sub-query of possible roles to choose from 
                                 array.push(roles[i].title);
                             }
                             var newArray = [...new Set(array)];
@@ -59,8 +74,10 @@ function addEmployee() {
                         choices: () => {
                             var array = [];
                             array.push('None');
-                            for (var i = 0; i < employees.length ; i++) {
-                                // array.push(employees[i].first_name +" "+ employees[i].last_name);
+                            for (var i = 0; i < employees.length; i++) {
+
+                                // traverses and pushes the roles.title varaibles onto the array
+                                // which is displayed to user as a sub-query of possible managers to choose from 
                                 array.push(employees[i].first_name + " " + employees[i].last_name);
                             }
                             var newArray = [...new Set(array)];
@@ -68,9 +85,8 @@ function addEmployee() {
                         }
                     }
                 ]).then((answers) => {
-                    // Comparing the employees and storing it into the variable
-                    console.log(answers);
 
+                    // Comparing the employees, roles, and storing it into the managerName and roleID
                     for (var i = 0; i < employees.length; i++) {
                         let managerName = employees[i].first_name + " " + employees[i].last_name;
                         if (managerName == answers.manager) {
@@ -79,7 +95,7 @@ function addEmployee() {
                     }
 
                     for (var i = 0; i < roles.length; i++) {
-                        if (roles[i].title === answers.role) {
+                        if (roles[i].title == answers.role) {
                             var roleID = roles[i].id;
                         }
                     }
