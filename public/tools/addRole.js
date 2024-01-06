@@ -2,9 +2,9 @@
 function addRole() {
 
     // grabbing the script from dbLink and cli
-    // dbLink.js establishes the connection to the SQL db
-    // We will require the inquirer package to ask sub-queries winthin the main query of 'Add roles'
-    // We will also require the showRoles functions to show to the console the our new roles was apended
+    // dbLink.js establishes the connection to the SQL DB
+    // We will require the inquirer package to ask sub-queries within the main query of 'Add roles'
+    // We will also require the showRoles functions to show to the console that our new roles were appended
     const db = require('../../db/dbLink.js');
     const inquirer = require('inquirer');
     const { showRoles } = require('../roles.js');
@@ -12,7 +12,7 @@ function addRole() {
     db.connect(err => {
         if (err) throw err;
 
-        // though we adding a new role, we only need the name of the department that the new role will belong to
+        //Though we adding a new role, we only need the name of the department that the new role will belong to
         db.query(`SELECT * FROM department`, (err, result) => {
             if (err) throw err;
             inquirer.prompt([
@@ -55,8 +55,8 @@ function addRole() {
                         var array = [];
                         for (var i = 0; i < result.length; i++) {
 
-                            // traverses and pushes the department.name varaibles onto the array
-                            // which is displayed to user as a sub-query of possible roles to choose from 
+                            // traverses and pushes the department.name variables onto the array
+                            // which is displayed to the user as a sub-query of possible roles to choose from 
                             array.push(result[i].name);
                         }
                         return array;
@@ -64,7 +64,7 @@ function addRole() {
                 }
             ])
                 .then((answers) => {
-                    // Comparing the result and storing it into the variable department
+                    // Comparing the result and storing it in the variable department
                     for (var i = 0; i < result.length; i++) {
                         if (result[i].name === answers.department) {
                             var department = result[i];
