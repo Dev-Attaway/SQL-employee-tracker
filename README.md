@@ -10,18 +10,19 @@
 7. [Questions](#questions)
 
 ## Description
-Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called content management systems (CMS). Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+Developers frequently have to create interfaces that allow non-developers to view and interact with information stored in databases easily. These interfaces are called content management systems (CMS). Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 ## Installation
 
 ## Usage
-This application is accessed through a CLI or an interaged terminal
+This application is accessed through a CLI or an integrated terminal and must have [node.js](https://nodejs.org/en) to execute  the initialization from the CLI.
+Must also have [MySQL Shell ](https://www.mysql.com/) or a SQL interface supporting development and administration for the MySQL Server.
 ## Contributing
-No further contributions for consideration, develope from your own fork
+No further contributions for consideration, develop from your fork
 ## Tests
-refer to the seeds.sql file found in db/seeds.sql to popluate data base for any further tests
+refer to the seeds.sql file found in db/seeds.sql to populate a database for any further tests
 ## License
-Please see https://mit-license.org/ to get detailed information for this license
+Please see https://mit-license.org/ to get detailed information about this license
 
 ## Questions
-You can find me [HERE](https://github.com/Dev-Attaway) on Github
+You can find me [HERE](https://github.com/Dev-Attaway) on GitHub
 You can email me at attaway.code@gmail.com if you have any additional questions.
